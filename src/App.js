@@ -4,9 +4,10 @@ import Navbar from './components/Navbar';
 import News from "./components/News";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
+import Footer from "./components/Footer";
 
 export default class App extends Component {
-  pageSize = 5;
+  pageSize = 6;
   state = {
     progress:0
   }
@@ -28,7 +29,9 @@ export default class App extends Component {
         <Route exact path="/science"><News setProgress={this.setProgress}  key = "science"  pageSize={this.pageSize} country="in" category="science"/> </Route>
         <Route exact path="/sports"><News setProgress={this.setProgress}  key = "sports"  pageSize={this.pageSize} country="in" category="sports"/> </Route>
         <Route exact path="/technology"><News setProgress={this.setProgress}  key = "technology"  pageSize={this.pageSize} country="in" category="technology"/> </Route>
+        <Route exact path="/us"><News setProgress={this.setProgress}  key = "us"  pageSize={this.pageSize} country="us" category="general"/> </Route>
         </Switch>
+        {/* <Footer /> */}
         </Router>
       </div>
     )
